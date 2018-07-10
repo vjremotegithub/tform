@@ -1,9 +1,12 @@
 provider "aws" {
-  region                  = "eu-west-1"
-  shared_credentials_file = "~/.aws/credentials
-  profile                 = "snd-profile"
+  region = "${var.aws_region}"
 }
 
+
+terraform {
+  # The configuration for this backend will be filled in by Terragrunt
+  backend "s3" {}
+}
 
 resource "aws_iam_user" "test_user" {
     name = "${var.name}"
