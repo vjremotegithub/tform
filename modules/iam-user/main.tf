@@ -1,6 +1,10 @@
 provider "aws" {
-  region                  = "eu-west-1"
-  shared_credentials_file = "~/.aws/credentials
-  profile                 = "snd-profile"
+  region = "${var.aws_region}"
+  shared_credentials_file = "${var.shared_credentials_file}"
+  profile                 ="${var.aws_profile}"
 }
 
+
+resource "aws_iam_user" "test_user" {
+    name = "${var.name}"
+}
