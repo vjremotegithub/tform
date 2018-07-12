@@ -1,7 +1,7 @@
 provider "aws" {
   region = "${var.aws_region}"
   profile= "${var.aws_profile}"
-  shared_credentials_file= "~/.aws/credentials"
+  shared_credentials_file="${var. shared_credentials_file}"
 }
 
 
@@ -13,3 +13,5 @@ terraform {
 resource "aws_iam_user" "test_user" {
     name = "${var.name}"
 }
+
+
