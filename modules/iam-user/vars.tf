@@ -10,6 +10,6 @@ variable "aws_profile" {
   description = "The AWS profile to use"
 }
 
-variable  "shared_credentials_file" {
+variable  "credentials_file" {
   description = "The AWS credentials"
 }
